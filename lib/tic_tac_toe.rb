@@ -9,4 +9,7 @@ WIN_COMBINATIONS = [
   [2,4,6], # Second Diagonal 
 ]
 
-board = []
+board = [" "," "," "," "," "," "," "," "," "]
+
+def display_board(board)
+  
