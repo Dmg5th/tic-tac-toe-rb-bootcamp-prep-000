@@ -35,7 +35,9 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
-def turn 
+def turn(board)
+  puts "Please input a number between 1 and 9"
+  
   
 
 
