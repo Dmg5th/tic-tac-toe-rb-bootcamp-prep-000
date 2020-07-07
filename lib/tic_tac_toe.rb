@@ -8,3 +8,5 @@ WIN_COMBINATIONS = [
   [0,4,8], # First Diagonal 
   [2,4,6], # Second Diagonal 
 ]
+
+board = []
