@@ -1,15 +1,13 @@
 WIN_COMBINATIONS = [
-  [0,1,2], # Top row
-  [3,4,5], # Middle row
-  [6,7,8], # Bottom row
-  [0,3,6], # First Row down 
-  [1,4,7], # Second row down
-  [2,5,8], # Third row down 
-  [0,4,8], # First Diagonal 
-  [2,4,6], # Second Diagonal 
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [6, 4, 2]
 ]
-
-board = [" "," "," "," "," "," "," "," "," "]
 
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -20,43 +18,31 @@ def display_board(board)
 end
 
 def input_to_index(user_input)
-  user_input.to_i - 1 
-end 
+  user_input.to_i - 1
+end
 
-def move (board, index, character)
-  board[index] = character 
-end 
+def move(board, index, current_player)
+  board[index] = current_player
+end
 
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
 end
 
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
-def turn(board)
-  puts "Please input a number between 1 and 9"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(board, index)
-    move(board, index)
-    display_board(board, index)
-  else
-    turn(board)
+def turn_count(board)
+  turn = 0
+  board.each do |index|
+    if index == "X" || index == "O"
+      turn += 1
+    end
   end
+  return turn
 end
 
-def turn_count(board)
- turn = o 
- board.each do |index|
-   if index == "X" || index == "O"
-     turn +=1 
-   end
- end 
- return turn 
- end 
-  
 def current_player(board)
   #if the turn count is an even number, that means O just went, so the next/current player is X
   num_turns = turn_count(board)
