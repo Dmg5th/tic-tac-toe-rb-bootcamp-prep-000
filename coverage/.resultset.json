@@ -2,9 +2,18 @@
   "RSpec": {
     "coverage": {
       "/home/industrious-genre-3933/tic-tac-toe-rb-bootcamp-prep-000/lib/tic_tac_toe.rb": [
-
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1594135908
+    "timestamp": 1594136119
   }
 }
